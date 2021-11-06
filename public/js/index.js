@@ -160,7 +160,7 @@ if (addBillForm) {
     }
     const dataObj = { ...dataArr };
     if (dataNamesArr.length === new Set(dataNamesArr).size) addBillProducts(dataObj);
-    else showAlert('error', 'هناك اسم منتج متكرر من فضلك ادخل اسم منتج جديد');
+    else showAlert('error', 'There is a field with duplicated name please enter a new name or delete the field');
   });
 }
 
@@ -216,7 +216,7 @@ if (updateBillForm)
     }
     const dataObj = { ...dataArr };
     if (dataNamesArr.length === new Set(dataNamesArr).size) updateBill(this.getAttribute('action'), dataObj);
-    else showAlert('error', 'هناك اسم منتج متكرر من فضلك ادخل اسم منتج جديد');
+    else showAlert('error', 'There is a field with duplicated name please enter a new name or delete the field');
   });
 
 // deleting items
