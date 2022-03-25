@@ -3,9 +3,8 @@
 <body class="productsPage">
   <section class="productPageJumbo jumbotron text-center">
     <div class="container">
-      <h1 class="productPageTitle">Mall's products</h1>
       <p>
-        <a href="/products/new" class="btn btn-primary my-2 productAddButton">Add product</a>
+        <a href="/products/new" class="btn btn-primary btn-style-one productAddButton">Add Product</a>
       </p>
     </div>
   </section>
@@ -13,42 +12,36 @@
   <div class="container productImgsContainer">
     <div class="row">
       <% foundProducts.forEach(function(product){ %>
-
       <div class="col-md-4">
-        <div class="card mb-4 shadow-sm text-right imgsContainer cardImgs">
+        <div class="card mb-4 imgsContainer cardImgs">
           <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="<%= product.image %>" />
           <div class="card-body">
             <p class="card-title productPageJumboTitle"><%= product.name %></p>
-            <ul class="productImgsList list-group list-group-flush mb-1">
+            <ul class="productImgsList list-group list-group-flush">
               <% if(product.priceA && product.priceB && product.priceC){%>
-              <li class="list-group-item p-0 pr-2 cardList">
-                <h8>Price</h8> : <%= product.priceA %> EGP / <h8>retail</h8> : <%= product.priceB %> EGP /
-                <h8>wholesale</h8> : <%= product.priceC %> EGP<span class="badge badge-primary badge-pill">-</span>
+              <li class="list-group-item cardList">
+                <h8 class="card-title">Prices : </h8>
+                <ul class="list-group flex-sm-row">
+                  <li class="list-group-item priceList"><h8>Main : </h8><%= product.priceA %> EGP</li>
+                  <li class="list-group-item priceList"><h8>Retail</h8> : <%= product.priceB %> EGP</li>
+                  <li class="list-group-item priceList"><h8>Wholesale</h8> : <%= product.priceC %> EGP</li>
+                </ul>
               </li>
               <%}else{%>
-              <li class="list-group-item p-0 pr-2 cardList">
-                ---<h8> :Number of items availabe</h8> <span class="badge badge-primary badge-pill">-</span>
-              </li>
+              <li class="list-group-item cardList"><h8> Number of items availabe : </h8> ---</li>
               <%}%> <% if(product.number){%>
-              <li class="list-group-item p-0 pr-2 cardList">
-                <h8> Number of items availabe</h8> : <%= product.number %>
-                <span class="badge badge-primary badge-pill">-</span>
-              </li>
+              <li class="list-group-item cardList"><h8> Number of items availabe : </h8> <%= product.number %></li>
               <%}else{%>
-              <li class="list-group-item p-0 pr-2 cardList">
-                ---<h8> :Number of items availabe</h8> <span class="badge badge-primary badge-pill">-</span>
-              </li>
+              <li class="list-group-item cardList"><h8> Number of items availabe : </h8> ---</li>
               <%}%>
             </ul>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary" disabled>..more</button>
-
                 <form action="/products/<%=product._id%>/update" method="get">
-                  <button class="btn btn-outline-secondary rounded-0 border-left-0">Update</button>
+                  <button class="btn util-btn">Update</button>
                 </form>
                 <form action="api/products/<%=product._id%>" class="delProductForm">
-                  <button type="submit" class="btn btn-danger delFormButton">Delete</button>
+                  <button type="submit" class="btn util-btn-del util-btn">Delete</button>
                 </form>
               </div>
             </div>

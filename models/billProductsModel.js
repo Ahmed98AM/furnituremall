@@ -5,11 +5,11 @@ const mongoose = require('mongoose');
 const billProductsSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "A product's name must be entered"],
+    required: [true, "A Product's Name Must be Entered"],
   },
   price: {
     type: Number,
-    required: [true, "A product's price must be entered"],
+    required: [true, "A Product's Price Must be Entered"],
   },
   number: {
     type: Number,

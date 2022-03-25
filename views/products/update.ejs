@@ -2,7 +2,6 @@
 <body class="productFormPages">
   <section class="productFormsPageJumbo jumbotron text-center">
     <div class="container">
-      <h1 class="productFormsPageTitle">Update product</h1>
       <form action="api/products/<%=foundProduct._id%>" class="text-right updateProductForm">
         <div class="form-group">
           <label class="productFormsInputLabel">Product name</label>
@@ -10,7 +9,6 @@
             class="form-control text-right prodName"
             type="text"
             name="product[name]"
-            placeholder="Product name"
             value="<%=foundProduct.name%>"
           />
         </div>
@@ -20,7 +18,6 @@
             class="form-control text-right prodImg"
             type="text"
             name="product[image]"
-            placeholder="Product image"
             value="<%=foundProduct.image%>"
           />
         </div>
@@ -54,11 +51,12 @@
             class="form-control text-right prodNumber"
             type="number"
             name="product[number]"
-            placeholder="Nubmer of products availabe"
             value="<%=foundProduct.number%>"
           />
         </div>
-        <button type="submit" class="btn btn-primary productFormsSubmitButton addProductSubmitButton">Update</button>
+        <button type="submit" class="btn btn-primary btn-style-one productFormsSubmitButton addProductSubmitButton">
+          Update
+        </button>
       </form>
     </div>
   </section>

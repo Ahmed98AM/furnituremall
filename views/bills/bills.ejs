@@ -3,9 +3,8 @@
 <body class="billsPage">
   <section class="billPageJumbo jumbotron text-center">
     <div class="container">
-      <h1 class="billPageTitle">Mall's bills</h1>
       <p>
-        <a class="btn btn-primary my-2 addBillButton">Add a bill</a>
+        <a class="btn btn-primary my-2 btn-style-one billAddButton">Add Bill</a>
       </p>
     </div>
   </section>
@@ -14,27 +13,29 @@
     <div class="row">
       <% foundBills.forEach(function(bill){ %>
       <div class="col-md-4">
-        <div class="card mb-4 shadow-sm text-right billSheetsContainer cardSheets">
+        <div class="card mb-4 text-right billSheetsContainer cardSheets">
           <div class="card-body">
-            <div class="text-left">
-              <div class="btn-group">
-                <form action="/bills/<%=bill._id%>/update" method="get">
-                  <button class="btn btn-info billFormButtons"></button>
-                </form>
-                <form action="api/bills/<%=bill._id%>" class="delBillForm">
-                  <button type="submit" class="btn btn-danger billFormButtons"></button>
-                </form>
-              </div>
-            </div>
             <% let date= JSON.stringify (bill.created_at); let counter= 0;%> <%if(bill.created_at){%>
             <div class="row">
-              <div class="col-lg-6">
+              <div class="col-lg-4 col-md-5 col-sm-4">
+                <div class="text-left">
+                  <div class="btn-group">
+                    <form action="/bills/<%=bill._id%>/update" method="get">
+                      <button class="btn util-btn billFormButtons">U</button>
+                    </form>
+                    <form action="api/bills/<%=bill._id%>" class="delBillForm">
+                      <button type="submit" class="btn util-btn-del util-btn billFormButtons">D</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-5 col-sm-4">
                 <h6>
                   <span class="billCardDateHeader">Hour: </span>
                   <span class="billCardFooter"><%= date.substring(12,17)%></span>
                 </h6>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-4 col-md-5 col-sm-4">
                 <h6>
                   <span class="billCardDateHeader">Date: </span>
                   <span class="billCardFooter"><%= date.substring(1,11)%></span>
@@ -44,14 +45,16 @@
             <%}%>
             <ul class="billsSheetsList list-group list-group-flush mb-1">
               <%bill.billProducts.forEach(function(billProduct){%>
-              <li class="list-group-item p-0 pr-2 cardList">
-                <h8>Number of items</h8>: <%= billProduct.number %> <span class="badge badge-primary badge-pill">-</span
-                ><h8> Product</h8>: <%= billProduct.name %> <span class="badge badge-primary badge-pill">-</span>
-                <h8>Price </h8>:<%= (billProduct.price*1)*billProduct.number %><h8> EGP </h8>
-              </li>
+              <div class="card-desc-items">
+                <li class="list-group-item cardList"><h8> Product :</h8> <%= billProduct.name %></li>
+                <li class="list-group-item cardList"><h8>Number of items :</h8> <%= billProduct.number %></li>
+                <li class="list-group-item cardList">
+                  <h8>Price : </h8> <%= (billProduct.price*1)*billProduct.number %> EGP
+                </li>
+              </div>
               <%})%>
               <button class="btn btn-sm text-center billFullpriceButton" disabled>
-                Total price : <%=bill.priceSum%>EGP
+                Total price : <%=bill.priceSum%> EGP
               </button>
             </ul>
           </div>

@@ -10,126 +10,235 @@
   font-family: kufam;
   src: url(/stylesheets/fonts/Kufam-Italic-VariableFont_wght.woff);
 }
+@font-face {
+  font-family: Bungee;
+  src: url(/stylesheets/fonts/Bungee-Regular.woff);
+}
+
 head title {
   font-family: reemKufi !important;
 }
+/*general styles*/
+#mainNav {
+  position: absolute;
+  width: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-family: 'Bungee';
+}
+#mainNav #toggler-btn {
+  outline: none;
+  border: none;
+}
+#mainNav .btn:focus,
+#mainNav .btn:active,
+#mainNav .btn:hover {
+  box-shadow: none !important;
+  outline: 0;
+}
 
-/* indexPage */
-.indexPage {
-  background: url('/stylesheets/images/FreeGreatPicture.com-4152-background-wallpaper-pattern-pattern.jpg');
+.navMainButtonText {
+  text-shadow: 3px 2px 5px rgb(235, 230, 236);
+  font-size: 1.5em !important;
+  float: right !important;
+}
+
+.btn-style-one {
+  color: #fff;
+  transition: all 0.3s;
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-y: scroll;
+}
+.btn-style-one span {
+  transition: all 0.3s;
+}
+.btn-style-one::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+.btn-style-one:hover span {
+  letter-spacing: 2px;
+}
+.btn-style-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.btn-style-one::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btn-style-one:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+@keyframes title-anim {
+  0%,
+  100% {
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+    text-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+    color: rgb(248, 175, 175);
+  }
+}
+@keyframes alert-anim-success {
+  0%,
+  100% {
+    color: #e8e9e9;
+    background-color: #61c8a7;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  }
+  80% {
+    color: #e8e9e9;
+    background-color: #61c8a7;
+    box-shadow: 0.5rem 0.5rem rgb(175, 138, 138), -0.5rem -0.5rem #ccc;
+  }
+}
+@keyframes alert-anim-error {
+  0%,
+  100% {
+    color: #e8e9e9;
+    background-color: #ffa099;
+    box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  }
+  80% {
+    color: #e8e9e9;
+    background-color: #fe5e53;
+    box-shadow: 0.5rem 0.5rem rgb(175, 138, 138), -0.5rem -0.5rem #ccc;
+  }
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* indexPage /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.indexPage {
+  background-color: #e8e9e9;
 }
 .indexPageHeader {
   background-color: transparent !important;
 }
 .indexTitle {
   margin-top: 1em;
-  font-family: reemKufi;
+  font-family: 'Bungee';
   font-size: 5.5em;
   text-shadow: 2px 2px 5px rgb(201, 142, 142);
-  animation: flux 2s linear infinite;
-  -moz-animation: flux 2s linear infinite;
-  -webkit-animation: flux 2s linear infinite;
-  -o-animation: flux 2s linear infinite;
+  animation: title-anim 2s linear infinite;
 }
 
-@keyframes flux {
-  0%,
-  100% {
-    text-shadow: 0 0 0.1vw green, 0 0 3vw green, 0 0 10vw green, 0 0 10vw green, 0 0 0.4vw green,
-      0.5vw 0.5vw 0.1vw rgb(14, 182, 14);
-    color: rgb(248, 175, 175);
-  }
-  50% {
-    text-shadow: 0 0 0.1vw green, 0 0 1.5vw green, 0 0 5vw green, 0 0 5vw green, 0 0 0.2vw green,
-      0.5vw 0.5vw 0.1vw #1eaa1e;
-    color: rgb(201, 142, 142);
-  }
-}
-@keyframes flux2 {
-  0%,
-  100% {
-    color: rgb(248, 239, 239);
-  }
-  50% {
-    color: rgb(247, 86, 86);
-  }
-}
-.indexSubtitle {
-  font-family: Jomhuria;
-  font-size: 2em !important;
-  color: rgba(6, 153, 26, 0.9) !important;
-  text-shadow: 2px 2px 2px rgb(3, 31, 3);
-}
 .indexPageButtons {
+  margin-top: 8em;
+}
+.bproducts,
+.bbills {
   width: 50%;
-  font-family: Jomhuria;
-  font-size: 1.6em !important;
+  letter-spacing: 0.18em;
+  font-size: 1.9em !important;
   border: 0 !important;
 }
-.indexPageButtons:focus {
+.bproducts:focus,
+.bbills:focus {
   outline: none !important;
   box-shadow: none !important;
 }
-.ibOne {
+
+.bproducts {
   background-color: rgb(233, 155, 155) !important;
-  color: rgb(52, 90, 53) !important;
+  color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
 }
-.ibTwo {
-  background-color: rgb(52, 90, 53) !important;
+.bbills {
+  background-color: #e8e9e9 !important;
   color: rgb(233, 155, 155, 0.9) !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  margin-top: 0.9em;
 }
 
-/* products page */
+/* products page ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .productsPage {
-  font-family: Jomhuria;
-  background-image: url('/stylesheets/images/FreeGreatPicture.com-4445-background-wallpaper-pattern-pattern.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-y: scroll;
-  position: relative;
+  background-color: #e8e9e9;
 }
 .productsPage::-webkit-scrollbar {
-  background-color: rgba(35, 52, 79, 0.9);
+  background-color: #e8e9e9;
 }
 .productsPage::-webkit-scrollbar-thumb {
-  background-color: rgba(250, 234, 10, 0.925);
-  border-radius: 40px;
+  background-color: rgba(113, 81, 105, 0.7);
 }
-.productsPage #navy {
-  position: absolute;
-  width: 100% !important;
-  background-color: rgba(241, 230, 72, 0.3) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  height: 2em;
-  border-radius: 0.5em;
-  margin-bottom: 5em !important;
-  position: fixed;
+.productsPage #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
 }
 .productsPage .navMainButtonText {
-  color: yellow !important;
-  text-shadow: 2px 2px 5px rgba(35, 52, 79);
-  font-size: 1.5em !important;
-  float: right !important;
-  font-family: reemKufi !important;
+  color: #715169 !important;
+  font-size: 1.8em !important;
 }
 .productsPage .navButtonText {
-  color: rgba(35, 52, 79) !important;
-  text-shadow: 2px 2px 5px yellow;
   font-size: 1.2em;
-  font-family: Jomhuria !important;
 }
-.productPageTitle {
-  margin-bottom: 0.4em !important;
-  margin-top: 0.3em !important;
-  font-family: reemkufi;
-  font-size: 5.5em;
-  text-shadow: 3px 2px 3px yellow;
-  color: #23344f;
+.productAddButton {
+  background-color: #715169 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+}
+.productAddButton:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.productImgsContainer {
+  font-family: 'Bungee';
+  overflow-y: scroll;
+  height: 45em;
+}
+.productsPage .imgsContainer,
+.productsPage .cardList {
+  background-color: #e8e9e9 !important;
+}
+.productsPage .cardList {
+  border: none !important;
+  font-size: 0.55em;
+  line-height: 2.5em;
+  padding: 0;
+  margin-bottom: 1.5em;
+}
+.productsPage .cardList h8 {
+  color: #715169;
+}
+.productsPage .priceList {
+  border: none !important;
+  font-size: 0.9em;
+  line-height: 2.5em;
+  background-color: #e8e9e9;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.productsPage .cardImgs {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.productImgsContainer::-webkit-scrollbar {
+  box-shadow: inset 0 0 6px #e8e9e9;
+}
+.productImgsContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 81, 105, 0.7);
 }
 .productPageJumbo {
   margin-bottom: 0 !important;
@@ -138,84 +247,85 @@ head title {
 .productPageJumboTitle {
   font-size: 1.5em;
   font-style: bold;
-  color: #23344f;
+  color: #715169;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  padding: 0.2em;
 }
 .productPageJumbo a {
   width: 100%;
+  margin-top: 5em !important;
 }
-.delFormButton {
-  border-radius: 0 0.2em 0.2em 0 !important;
+.productImgsList {
+  margin-top: 2em;
+  margin-bottom: 1em !important;
 }
-.imgsContainer,
-.cardList {
-  background-color: yellow !important;
+.productsPage .util-btn {
+  background-color: #e8e9e9;
+  border-radius: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 0.8em !important;
+  color: #715169;
+  letter-spacing: 0.1em;
 }
-.cardImgs {
-  padding: 0 !important;
-  border: 0 !important;
-}
-.productAddButton {
-  background-color: yellow !important;
-  color: black !important;
-  border: 0 !important;
-}
-.productAddButton:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-.productImgsContainer {
-  overflow-y: scroll;
-  height: 25em;
-}
-.productImgsContainer::-webkit-scrollbar {
-  box-shadow: inset 0 0 6px rgba(241, 230, 72, 0.3);
-  border-radius: 20px;
-}
-.productImgsContainer::-webkit-scrollbar-thumb {
-  background-color: rgba(250, 235, 26, 0.2);
-  border-radius: 20px;
-}
-.productImgsList span {
-  background-color: #23344f !important;
-  color: yellow !important;
-  margin-left: 0.3em;
-  width: 0.2em !important;
+.productsPage .util-btn-del {
+  background-color: #715169 !important;
+  border-radius: 0 !important;
+  color: #e8e9e9 !important;
 }
 
-/* product form Pages */
+/* product form Pages ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.productFormPages #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.productFormPages .navMainButtonText {
+  color: #6a80b5 !important;
+  font-size: 1.8em !important;
+}
+.productFormPages .navButtonText {
+  font-size: 1.2em;
+}
 .productFormPages {
-  background-image: url('/stylesheets/images/FreeGreatPicture.com-7291-background-wallpaper-pattern-pattern.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Jomhuria;
+  background-color: #e8e9e9;
+}
+.addProductForm,
+.updateProductForm {
+  margin-top: 5em;
+}
+.addProductForm .form-group,
+.updateProductForm .form-group {
+  margin-top: 5em;
+}
+.addProductForm .form-group input,
+.updateProductForm .form-group input {
+  font-family: 'Bungee';
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  margin-top: 0.5em;
 }
 .productFormsPageJumbo {
   background-color: transparent !important;
   padding: 0%;
   width: 70%;
-  margin-left: 10em !important;
-}
-.productFormsPageTitle {
-  margin-top: 0 !important;
-  margin-bottom: 0.2em !important;
-  margin-top: 0.4em !important;
-  font-family: reemkufi;
-  font-size: 3.5em;
-  text-shadow: 3px 2px 3px rgb(164, 177, 90);
-  color: #0e3b14;
+  margin: auto !important;
 }
 .addProductSubmitButton {
-  width: 100%;
-  background-color: rgb(131, 182, 30) !important;
+  background-color: #6a80b5 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
   border: 0 !important;
+  letter-spacing: 0.4em;
+  width: 100%;
+  margin-top: 2em;
 }
 .addProductSubmitButton:focus {
   outline: none !important;
-  box-shadow: 15px 15px 25px greenyellow !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
 }
 .productFormsInputLabel {
+  font-family: 'Bungee';
   color: #0e3b14;
+  margin-bottom: 1.1em;
 }
 
 .form-control:focus {
@@ -227,231 +337,257 @@ head title {
   font-size: 1em !important;
   width: 100%;
 }
-.billFormPages #navy,
-.productFormPages #navy {
-  position: absolute;
-  width: 100% !important;
-  background-color: rgb(167, 178, 99, 0.5) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  height: 2em;
-  border-radius: 0.5em;
-  margin-bottom: 5em !important;
-  position: fixed;
+.productFormPages::-webkit-scrollbar {
+  background-color: #e8e9e9;
 }
-.billFormPages .navMainButtonText,
-.productFormPages .navMainButtonText {
-  color: rgb(93, 104, 24) !important;
-  text-shadow: 3px 2px 5px rgb(235, 230, 236);
-  font-size: 1.5em !important;
-  float: right !important;
-  font-family: reemKufi !important;
-}
-.billFormPages .navButtonText,
-.productFormPages .navButtonText {
-  color: rgb(212, 226, 199) !important;
-  text-shadow: 2px 2px 5px rgb(167, 178, 99, 0.5);
-  font-size: 1.2em;
-  font-family: Jomhuria !important;
+.productFormPages::-webkit-scrollbar-thumb {
+  background-color: rgba(106, 128, 181, 0.7);
 }
 
 /* bills page */
 .billsPage {
-  font-family: Jomhuria;
-  background-image: url('/stylesheets/images/FreeGreatPicture.com-13261-fabric-texture.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow-y: scroll;
-  position: relative;
-  color: white;
+  background-color: #e8e9e9;
 }
 .billsPage::-webkit-scrollbar {
-  background-color: rgba(127, 103, 117, 0.9);
+  background-color: #e8e9e9;
 }
 .billsPage::-webkit-scrollbar-thumb {
-  background-color: rgba(127, 103, 117, 0.925);
-  border-radius: 40px;
+  background-color: rgba(119, 177, 173, 0.7);
 }
-.billsPage #navy {
-  position: absolute;
-  width: 100% !important;
-  background-color: rgba(127, 103, 117, 0.525) !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  height: 2em;
-  border-radius: 0.5em;
-  margin-bottom: 5em !important;
-  position: fixed;
+.billsPage #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
 }
 .billsPage .navMainButtonText {
-  color: rgba(127, 103, 117) !important;
-  text-shadow: 3px 2px 5px rgb(235, 230, 236);
-  font-size: 1.5em !important;
-  float: right !important;
-  font-family: reemKufi !important;
+  color: #77b1ad !important;
+  font-size: 1.8em !important;
 }
 .billsPage .navButtonText {
-  color: rgb(240, 232, 239) !important;
-  text-shadow: 2px 2px 5px rgb(145, 142, 146);
   font-size: 1.2em;
-  font-family: Jomhuria !important;
-}
-.billPageTitle {
-  margin-bottom: 0.4em !important;
-  margin-top: 0.3em !important;
-  font-family: reemkufi;
-  font-size: 5.5em;
-  text-shadow: 3px 2px 3px rgba(127, 103, 117, 0.925);
 }
 .billPageJumbo {
   margin-bottom: 0 !important;
   background-color: transparent !important;
 }
+.billsPage .billSheetsContainer,
+.billsPage .billsSheetsList .cardList {
+  background-color: #e8e9e9 !important;
+}
+.billsPage .billsSheetsList {
+  margin-top: 1.4em;
+}
+.billsPage .cardList {
+  border: none !important;
+  font-size: 0.7em !important;
+  line-height: 2.5em;
+  padding: 0.2em;
+  margin: 0.6em;
+}
+.billsPage .cardList h8 {
+  color: #77b1ad !important;
+  float: left;
+}
+.card-desc-items {
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.billsPage .cardSheets {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
 .billtPageJumboTitle {
   font-size: 1.5em;
   font-style: bold;
-  color: #23344f;
+  color: #77b1ad;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  padding: 0.2em;
 }
 .billPageJumbo a {
   width: 100%;
+  margin-top: 5em !important;
 }
-.billSheetsContainer,
-.billsSheetsList .cardList {
-  background-color: rgba(127, 103, 117, 0.925) !important;
-}
-.cardSheets {
-  padding: 0 !important;
+.billAddButton {
+  background-color: #77b1ad !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
   border: 0 !important;
+  letter-spacing: 0.4em;
 }
-
-.addBillButton {
-  background-color: rgba(127, 103, 117, 0.925) !important;
-  color: rgb(196, 192, 195) !important;
-  border: 0 !important;
-  font-size: 1.2em !important;
-}
-.addBillButton:focus {
+.billAddButton:focus {
   outline: none !important;
   box-shadow: none !important;
-  background-color: rgb(202, 114, 236);
 }
 .billImgsContainer {
+  font-family: 'Bungee';
   overflow-y: scroll;
-  height: 25em;
+  height: 45em;
 }
 .billImgsContainer::-webkit-scrollbar {
-  box-shadow: inset 0 0 6px rgba(127, 103, 117, 0.925);
-  border-radius: 20px;
+  background-color: #e8e9e9;
 }
 .billImgsContainer::-webkit-scrollbar-thumb {
-  background-color: rgba(127, 103, 117, 0.925);
-  border-radius: 20px;
+  background-color: rgba(119, 177, 173, 0.7);
 }
 .billFullpriceButton {
-  background-color: rgba(137, 122, 139, 0.7);
-  color: white;
+  background-color: rgba(119, 177, 173, 0.7);
+  color: #e8e9e9;
   font-size: 1em !important;
   margin-top: 1.3em;
 }
 .billCardDateHeader {
-  font-size: 2em;
-  color: rgba(194, 188, 192, 0.8);
-  text-shadow: 3px 2px 3px rgba(194, 187, 191, 0.125);
+  font-size: 1.1em;
+  color: #77b1ad;
 }
 .billCardFooter {
-  font-size: 1.2em;
+  font-size: 0.7em;
 }
 .billsSheetsList .list-group-item {
-  font-size: 1.3em;
+  font-size: 0.7em;
 }
-.billFormButtons {
-  height: 1em;
+.billsPage .util-btn {
+  border-radius: 0 !important;
+  background-color: #e8e9e9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 0.8em !important;
+  color: #77b1ad;
+  letter-spacing: 0.1em;
+}
+.billsPage .util-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.billsPage .util-btn-del {
+  background-color: #77b1ad;
+  color: #e8e9e9;
 }
 .billsSheetsList span {
-  background-color: rgba(137, 122, 139, 0.7) !important;
-  color: rgb(172, 163, 169) !important;
+  background-color: rgba(119, 177, 173, 0.7) !important;
+  color: rgba(119, 177, 173, 0.7) !important;
   margin-left: 0.3em;
   width: 0.2em !important;
 }
 
 /* bills form pages */
+.billFormPages #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.billFormPages .navMainButtonText {
+  color: #c7b782 !important;
+  font-size: 1.8em !important;
+}
+.billFormPages .navButtonText {
+  font-size: 1.2em;
+}
 .billFormPages {
-  background: url('/stylesheets/images/FreeGreatPicture.com-7291-background-wallpaper-pattern-pattern.jpg') no-repeat
-    center center fixed;
-  background-size: cover;
-  font-family: Jomhuria;
+  background-color: #e8e9e9;
 }
 .billFormsPageJumbo {
   background-color: transparent !important;
   padding: 0%;
   width: 100%;
 }
-.billFormsPageTitle {
-  font-family: reemkufi;
-  font-size: 3.5em;
-  text-shadow: 3px 2px 3px rgb(164, 177, 90);
-  color: #0e3b14;
+.billContainer .form-group {
+  font-family: 'Bungee';
+  margin-left: 0.7em;
+  margin-top: 1.7em;
+}
+.billContainer .form-group input,
+.billContainer .form-group select {
+  margin-top: 1.1em;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.billContainer .form-group select option {
+  background-color: #e8e9e9 !important;
+  color: #c7b782;
+}
+.billContainer .form-group input:focus,
+.billContainer .form-group select:focus {
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  outline: 0 !important;
 }
 .billProductsSubmitButtons {
-  text-align: center;
-  width: 23% !important;
-  background-color: rgb(131, 182, 30) !important;
+  background-color: #c7b782 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
   border: 0 !important;
+  letter-spacing: 0.4em;
+  width: 100%;
+  margin-top: 2em;
 }
 .billProductsSubmitButtons:focus {
   outline: none !important;
-  box-shadow: 15px 15px 25px greenyellow !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
 }
-.billFormsInputLabel {
-  color: #0e3b14;
+.addBillProductsButton {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #c7b782 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+  margin-top: 3.5em;
+}
+.addBillProductsButton:focus {
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  outline: none !important;
+}
+.billFormPages .addBillForm,
+.billFormPages .updateBillForm {
+  margin-top: 5em;
 }
 .billFormsForm {
   justify-content: center;
 }
-.addProductButton {
-  outline: none !important;
+.billFormsForm .name {
+  padding-top: 0 !important ;
 }
-.addProductButton:focus {
-  outline: none !important;
-  box-shadow: none !important;
+.billFormPages .util-btn-del {
+  background-color: #c7b782 !important;
+  border-radius: 0 !important;
+  color: #e8e9e9 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  margin-top: 3.6em;
+  margin-left: 0.4em;
+}
+@media (max-width: 768px) {
+  .billFormPages .util-btn-del {
+    margin-top: 5.2em;
+    margin-left: 0.7em;
+  }
+}
+.billFormPages::-webkit-scrollbar {
+  background-color: #e8e9e9;
+}
+.billFormPages::-webkit-scrollbar-thumb {
+  background-color: rgba(199, 183, 130, 0.7);
 }
 /* To handle alerts*/
 .alert {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 9999;
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 400;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif !important;
+  font-size: 1.05em;
+  letter-spacing: 0.25em;
   text-align: center;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 1.6rem 15rem;
-  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  width: 99.8%;
+  padding: 1.6em 15em;
+}
+@media (max-width: 768px) {
+  .alert {
+    font-size: 0.8em;
+  }
 }
 .alert--success {
-  background-color: #20bf6b;
-  width: 50%;
-  font-size: 0.9rem;
-  font-family: kufam !important;
-  border: 0.2rem outset rgb(255, 140, 140) !important ;
-  animation: flux2 1s linear infinite;
-  -moz-animation: flux2 1s linear infinite;
-  -webkit-animation: flux2 1s linear infinite;
-  -o-animation: flux2 1s linear infinite;
+  animation: alert-anim-success 5s linear 2;
+  -moz-animation: alert-anim-success 5s linear 2;
+  -webkit-animation: alert-anim-success 5s linear 2;
+  -o-animation: alert-anim-success 5s linear 2;
 }
 .alert--error {
-  background-color: #eb4d4b;
-  width: 50%;
-  font-size: 0.9rem;
-  font-family: kufam !important;
-  border: 0.2rem outset rgb(211, 255, 145) !important ;
-  animation: flux2 1s linear infinite;
-  -moz-animation: flux2 1s linear infinite;
-  -webkit-animation: flux2 1s linear infinite;
-  -o-animation: flux2 1s linear infinite;
+  animation: alert-anim-error 5s linear 2;
+  -moz-animation: alert-anim-error 5s linear 2;
+  -webkit-animation: alert-anim-error 5s linear 2;
+  -o-animation: alert-anim-error 5s linear 2;
 }

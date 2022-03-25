@@ -4,7 +4,12 @@ import { addBill, addProduct, addBillProducts } from './addItems';
 import { updateProduct, updateBill } from './updateItems';
 import { deleteProduct, deleteBill, deleteBillProduct } from './deleteItems';
 
-const navBar = document.querySelector('#navy');
+$(document).ready(function () {
+  $('#toggler-btn').on('click', function () {
+    $('#clpse-icon').toggleClass('fa-arrow-up-animated');
+  });
+});
+const navBar = document.querySelector('#mainNav');
 
 const bodyClassName = document.querySelector('body').className;
 const bodyClassNameArray = bodyClassName.split(' ');
@@ -13,7 +18,7 @@ const billContainerDiv = document.querySelector('.billContainer');
 
 const addProductForm = document.querySelector('.addProductForm');
 const addBillForm = document.querySelector('.addBillForm');
-const addBillButton = document.querySelector('.addBillButton');
+const billAddButton = document.querySelector('.billAddButton');
 const addBillProductsButton = document.querySelector('.addBillProductsButton');
 
 const updateProductForm = document.querySelector('.updateProductForm');
@@ -73,23 +78,22 @@ const billProductHTML = async function () {
   const html = function () {
     const htmlElement = document.createElement('div');
     htmlElement.innerHTML = `
-        <div class="form-group">
-              <label class="billFormsInputLabel">Product price</label>
-              <input class="form-control text-right price" type="text" placeholder="price" />
+        <div class="form-group col-sm-3">
+              <label class="billFormsInputLabel">Product Price</label>
+              <input class="form-control text-right price" type="text" />
         </div>
-        <div class="form-group">
-              <label for="bill" class="billFormsInputLabel">Product name</label>
+        <div class="form-group col-sm-3">
+              <label for="bill" class="billFormsInputLabel">Product Name</label>
               <select class="form-control text-right name" type="text" >
                 ${prodNamesListHtml()}
               </select>
         </div>
-        <div class="form-group">
-              <label class="billFormsInputLabel">Number of items</label>
-              <input class="form-control text-right number" type="number"  placeholder="Number of items" value = 1 />
+        <div class="form-group col-sm-3">
+              <label class="billFormsInputLabel">Number of Items</label>
+              <input class="form-control text-right number" type="number" value = 1 />
         </div>
         <div class="form-group" >
-              <label class="billFormsInputLabel">Delete product</label>
-              <button class=" form-control btn btn-danger delBillProductButton" type="button">Delete</button>
+              <button class=" form-control btn delBillProductButton util-btn-del" type="button">D</button>
         </div>
         <div class="form-group" style = "display:none" >
               <input class="form-control text-right billId" type="text"  value = "${billId}" />
@@ -122,8 +126,8 @@ if (addBillForm || updateBillForm) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // adding items
-if (addBillButton)
-  addBillButton.addEventListener('click', function (e) {
+if (billAddButton)
+  billAddButton.addEventListener('click', function (e) {
     e.preventDefault();
     addBill();
   });

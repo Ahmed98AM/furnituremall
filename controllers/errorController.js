@@ -2,12 +2,12 @@ const AppError = require('./../utils/appError');
 
 const dupFieldsErrorHandler = (err) => {
   const value = err.message.match(/(["'])(\\?.)*?\1/)[0];
-  const message = `Please enter another value the ${value} is duplicated`;
+  const message = `${value} is Entered More than One`;
   return new AppError(message, 400);
 };
 const validationErrorHandler = (err) => {
   const value = err.message.split(':').pop();
-  const message = `Something wrong happened because ${value} or it was entered incorrectly `;
+  const message = `${value} or It Was Entered Incorrectly `;
   return new AppError(message, 400);
 };
 

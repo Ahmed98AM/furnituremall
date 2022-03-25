@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
       validator: function (val) {
         return val > 0;
       },
-      message: 'The number of items wanted is not available',
+      message: 'The Number of Items Added is Not Available',
     },
   },
 });

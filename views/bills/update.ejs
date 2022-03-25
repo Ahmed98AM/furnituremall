@@ -1,16 +1,15 @@
 <%- include('../partials/header') %>
 <body class="billFormPages updateBillFormPage">
   <section class="billFormsPageJumbo jumbotron text-center">
-    <h1 class="billFormsPageTitle">Update bill</h1>
     <form action="api/bills/<%=foundBill._id%>" class="formClass updateBillForm">
       <div class="billContainer billUpdateContainer container">
         <% foundBill.billProducts.forEach(function(billProduct){ %>
         <div class="form-row billFormsForm">
-          <div class="form-group">
+          <div class="form-group col-sm-3">
             <label class="billFormsInputLabel">Product price</label>
             <input class="form-control text-right price" type="number" name="price" value="<%=billProduct.price%>" />
           </div>
-          <div class="form-group">
+          <div class="form-group col-sm-3">
             <label for="cars" class="billFormsInputLabel">Product name</label>
             <select class="form-control text-right name" type="text" name="billName">
               <option value="<%=billProduct.name%>"><%=billProduct.name%></option>
@@ -19,18 +18,17 @@
               <% }}) %>
             </select>
           </div>
-          <div class="form-group">
+          <div class="form-group col-sm-3">
             <label class="billFormsInputLabel">Number of items</label>
             <input class="form-control text-right number" type="number" name="number" value="<%=billProduct.number%>" />
           </div>
           <div class="form-group">
-            <label class="billFormsInputLabel">Delete product</label>
             <button
-              class="form-control btn btn-danger delBillProductButton"
+              class="form-control btn util-btn-del delBillProductButton"
               type="button"
               delBillProductURL="api/billProducts/<%=billProduct._id%>"
             >
-              Delete
+              D
             </button>
           </div>
           <div class="form-group" style="display: none">
@@ -44,9 +42,9 @@
         </div>
         <% }) %>
       </div>
+      <button class="btn btn-primary col-md-3 col-sm-6 addBillProductsButton" type="button">Add a Product</button>
       <div>
-        <button type="submit" class="btn btn-primary billProductsSubmitButtons">Update</button>
-        <button class="btn btn-primary addBillProductsButton" type="button">Add</button>
+        <button type="submit" class="btn btn-primary btn-style-one billProductsSubmitButtons">Update Bill</button>
       </div>
     </form>
   </section>
