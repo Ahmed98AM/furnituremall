@@ -20,7 +20,7 @@ head title {
 }
 /*general styles*/
 #mainNav {
-  position: absolute;
+  position: relative;
   width: 100% !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
@@ -38,9 +38,12 @@ head title {
 }
 
 .navMainButtonText {
-  text-shadow: 3px 2px 5px rgb(235, 230, 236);
-  font-size: 1.5em !important;
+  text-shadow: 0.3em 0.2em 0.5em rgb(235, 230, 236);
+  font-size: 1.8em !important;
   float: right !important;
+}
+.navButtonText {
+  font-size: 1.2em !important;
 }
 
 .btn-style-one {
@@ -91,6 +94,9 @@ head title {
   opacity: 0;
   transform: scale(0.1, 1);
 }
+* {
+  word-break: keep-all;
+}
 
 @keyframes title-anim {
   0%,
@@ -138,7 +144,7 @@ head title {
   margin-top: 1em;
   font-family: 'Bungee';
   font-size: 5.5em;
-  text-shadow: 2px 2px 5px rgb(201, 142, 142);
+  text-shadow: 0.2em 0.2em 0.5em rgb(201, 142, 142);
   animation: title-anim 2s linear infinite;
 }
 
@@ -186,10 +192,6 @@ head title {
 }
 .productsPage .navMainButtonText {
   color: #715169 !important;
-  font-size: 1.8em !important;
-}
-.productsPage .navButtonText {
-  font-size: 1.2em;
 }
 .productAddButton {
   background-color: #715169 !important;
@@ -232,6 +234,7 @@ head title {
 .productsPage .cardImgs {
   padding: 0 !important;
   border: 0 !important;
+  margin-bottom: 5em;
   box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
 }
 .productImgsContainer::-webkit-scrollbar {
@@ -286,17 +289,13 @@ head title {
 }
 .productFormPages .navMainButtonText {
   color: #6a80b5 !important;
-  font-size: 1.8em !important;
-}
-.productFormPages .navButtonText {
-  font-size: 1.2em;
 }
 .productFormPages {
   background-color: #e8e9e9;
 }
 .addProductForm,
 .updateProductForm {
-  margin-top: 5em;
+  margin-top: 2.5em;
 }
 .addProductForm .form-group,
 .updateProductForm .form-group {
@@ -365,10 +364,6 @@ head title {
 }
 .billsPage .navMainButtonText {
   color: #77b1ad !important;
-  font-size: 1.8em !important;
-}
-.billsPage .navButtonText {
-  font-size: 1.2em;
 }
 .billPageJumbo {
   margin-bottom: 0 !important;
@@ -480,10 +475,6 @@ head title {
 }
 .billFormPages .navMainButtonText {
   color: #c7b782 !important;
-  font-size: 1.8em !important;
-}
-.billFormPages .navButtonText {
-  font-size: 1.2em;
 }
 .billFormPages {
   background-color: #e8e9e9;
@@ -539,7 +530,7 @@ head title {
 }
 .billFormPages .addBillForm,
 .billFormPages .updateBillForm {
-  margin-top: 5em;
+  margin-top: 2.5em;
 }
 .billFormsForm {
   justify-content: center;
@@ -556,12 +547,7 @@ head title {
   margin-top: 3.6em;
   margin-left: 0.4em;
 }
-@media (max-width: 768px) {
-  .billFormPages .util-btn-del {
-    margin-top: 5.2em;
-    margin-left: 0.7em;
-  }
-}
+
 .billFormPages::-webkit-scrollbar {
   background-color: #e8e9e9;
 }
@@ -579,11 +565,7 @@ head title {
   width: 99.8%;
   padding: 1.6em 15em;
 }
-@media (max-width: 768px) {
-  .alert {
-    font-size: 0.8em;
-  }
-}
+
 .alert--success {
   animation: alert-anim-success 5s linear 2;
   -moz-animation: alert-anim-success 5s linear 2;
@@ -595,4 +577,42 @@ head title {
   -moz-animation: alert-anim-error 5s linear 2;
   -webkit-animation: alert-anim-error 5s linear 2;
   -o-animation: alert-anim-error 5s linear 2;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 768px) {
+  .alert {
+    font-size: 0.8em;
+  }
+  .navMainButtonText {
+    font-size: 1.2em !important;
+  }
+  .navButtonText {
+    font-size: 0.9em !important;
+  }
+  .indexPage .indexTitle {
+    margin-top: 3em;
+    font-size: 3em;
+    text-shadow: 0.05em 0.05em 0.2em rgb(201, 142, 142);
+  }
+  .indexPage .bproducts,
+  .indexPage .bbills {
+    width: 100%;
+    letter-spacing: 0.18em;
+    font-size: 1em !important;
+    border: 0 !important;
+  }
+  .productPageJumbo a {
+    margin-top: 3em !important;
+  }
+  .addProductSubmitButton {
+    width: 100%;
+  }
+  .addProductForm .form-group,
+  .updateProductForm .form-group {
+    margin-top: 1em;
+  }
+  .billFormPages .util-btn-del {
+    margin-top: 1.2em;
+    margin-left: 0.7em;
+  }
 }
