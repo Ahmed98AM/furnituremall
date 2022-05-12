@@ -164,7 +164,7 @@ if (addBillForm) {
     }
     const dataObj = { ...dataArr };
     if (dataNamesArr.length === new Set(dataNamesArr).size) addBillProducts(dataObj);
-    else showAlert('error', 'There is a Field With Duplicated Name! Please Enter a New Name or Delete the Field');
+    else showAlert('error', 'There is a Field With Duplicated Name! Please Enter a New Name or Delete the Field!');
   });
 }
 
