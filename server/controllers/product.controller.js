@@ -1,5 +1,4 @@
-const Product = require('../models/productsModel');
-const catchAsync = require('../utils/catchAsync');
+const Product = require('../models/product.model');
 
 exports.getAllProducts = async function (req, res, next) {
   try {
@@ -9,26 +8,34 @@ exports.getAllProducts = async function (req, res, next) {
       foundProducts,
     });
   } catch (err) {
-    console.log(err);
+    next(err);
   }
 };
-exports.createProduct = catchAsync(async function (req, res, next) {
-  let createdProduct = {};
-  if (req.body) {
-    createdProduct = await Product.create(req.body);
+exports.createProduct = async function (req, res, next) {
+  try{
+    let createdProduct = {};
+    if (req.body) {
+      createdProduct = await Product.create(req.body);
+    }
+    res.status(201).json({
+      status: 'success',
+      data: createdProduct,
+    });
+  } catch (err) {
+    next(err);
   }
-  res.status(201).json({
-    status: 'success',
-    data: createdProduct,
-  });
-});
-exports.updateProduct = catchAsync(async function (req, res, next) {
+};
+exports.updateProduct = async function (req, res, next) {
+  try{
   const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body);
   res.status(200).json({
     status: 'success',
     data: updatedProduct,
   });
-});
+  } catch (err) {
+    next(err);
+  }
+};
 exports.deleteProduct = async function (req, res, next) {
   try {
     await Product.findByIdAndDelete(req.params.id);

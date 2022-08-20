@@ -1,5 +1,5 @@
 const BillProducts = require('../models/billProductsModel');
-const Product = require('../models/productsModel');
+const Product = require('../models/product.model');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 

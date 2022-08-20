@@ -1,8 +1,8 @@
 const Bill = require('../models/billsModel');
 const BillProducts = require('../models/billProductsModel');
-const catchAsync = require('../utils/catchAsync');
 
-exports.getAllBills = catchAsync(async function (req, res, next) {
+exports.getAllBills = async function (req, res, next) {
+  try{
   const foundBills = await Bill.find();
   const priceSumUpdatedBills = await Promise.all(
     foundBills.map(async (foundBill) => {
@@ -19,17 +19,25 @@ exports.getAllBills = catchAsync(async function (req, res, next) {
     status: 'success',
     data: priceSumUpdatedBills,
   });
-});
+  } catch (err) {
+    next(err);
+  }
+};
 
-exports.createBill = catchAsync(async function (req, res, next) {
+exports.createBill = async function (req, res, next) {
+  try{
   const createdBill = await Bill.create({ created_At: Date.now() });
   res.status(201).json({
     status: 'success',
     data: createdBill,
   });
-});
+  } catch (err) {
+    next(err)
+  }
+};
 
-exports.deleteBill = catchAsync(async function (req, res, next) {
+exports.deleteBill = async function (req, res, next) {
+  try{
   const deletedBill = await Bill.findByIdAndDelete(req.params.id);
   await Promise.all(
     deletedBill.billProducts.map(async function (billProduct) {
@@ -39,4 +47,7 @@ exports.deleteBill = catchAsync(async function (req, res, next) {
   res.status(200).json({
     status: 'success',
   });
-});
+  } catch (err) {
+    next(err);
+  }
+};
