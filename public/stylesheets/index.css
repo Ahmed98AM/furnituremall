@@ -304,8 +304,9 @@ head title {
 .addProductForm .form-group input,
 .updateProductForm .form-group input {
   font-family: 'Bungee';
-  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
-  margin-top: 0.5em;
+  box-shadow: 0.5rem 0.5rem black;
+  margin-top: 1.5em;
+  transition: all 0.2s;
 }
 .productFormsPageJumbo {
   background-color: transparent !important;
@@ -492,7 +493,8 @@ head title {
 .billContainer .form-group input,
 .billContainer .form-group select {
   margin-top: 1.1em;
-  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  box-shadow: 0.5rem 0.5rem black;
+  transition: all 0.2s;
 }
 .billContainer .form-group select option {
   background-color: #e8e9e9 !important;
@@ -500,7 +502,7 @@ head title {
 }
 .billContainer .form-group input:focus,
 .billContainer .form-group select:focus {
-  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  box-shadow: none;
   outline: 0 !important;
 }
 .billProductsSubmitButtons {
