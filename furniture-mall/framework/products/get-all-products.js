@@ -6,7 +6,6 @@ export const fetchProducts = async () => {
   const { data } = await http.get(
     API_ENDPOINTS.PRODUCTS
   );
-  console.log(data)
   return data;
 };
 export const useProductsQuery = () => {

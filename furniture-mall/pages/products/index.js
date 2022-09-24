@@ -2,7 +2,7 @@ import axios from "axios";
 import Layout from "../../components/layout/layout";
 import {useProductsQuery} from "../../framework/products/get-all-products";
 
-export default function Home({products}) {
+export default function Products({products}) {
     const { data } = useProductsQuery();
     return (
         <div>
@@ -26,4 +26,4 @@ export const getStaticProps = async () => {
 	};
 };
 
-Home.Layout = Layout;
+Products.Layout = Layout;
