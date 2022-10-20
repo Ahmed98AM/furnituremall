@@ -1,0 +1,483 @@
+.indexPage {
+  background-color: #e8e9e9;
+}
+.indexPageHeader {
+  background-color: transparent !important;
+}
+.indexTitle {
+  margin-top: 1em;
+  font-family: 'Bungee';
+  font-size: 5.5em;
+  text-shadow: 0.2em 0.2em 0.5em rgb(201, 142, 142);
+  animation: title-anim 2s linear infinite;
+}
+
+.indexPageButtons {
+  margin-top: 8em;
+}
+.bproducts,
+.bbills {
+  color: red;
+  width: 50%;
+  letter-spacing: 0.18em;
+  font-size: 1.9em !important;
+  border: 0 !important;
+}
+.bproducts:focus,
+.bbills:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.bproducts {
+  background-color: rgb(233, 155, 155) !important;
+  color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.bbills {
+  background-color: #e8e9e9 !important;
+  color: rgb(233, 155, 155, 0.9) !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  margin-top: 0.9em;
+}
+
+/* products page ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.productsPage {
+  background-color: #e8e9e9;
+}
+.productsPage::-webkit-scrollbar {
+  background-color: #e8e9e9;
+}
+.productsPage::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 81, 105, 0.7);
+}
+.productsPage #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.productsPage .navMainButtonText {
+  color: #715169 !important;
+}
+.productAddButton {
+  background-color: #715169 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+}
+.productAddButton:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.productImgsContainer {
+  font-family: 'Bungee';
+  overflow-y: scroll;
+  height: 45em;
+}
+.productsPage .imgsContainer,
+.productsPage .cardList {
+  background-color: #e8e9e9 !important;
+}
+.productsPage .cardList {
+  border: none !important;
+  font-size: 0.55em;
+  line-height: 2.5em;
+  padding: 0;
+  margin-bottom: 1.5em;
+}
+.productsPage .cardList h8 {
+  color: #715169;
+}
+.productsPage .priceList {
+  border: none !important;
+  font-size: 0.9em;
+  line-height: 2.5em;
+  background-color: #e8e9e9;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.productsPage .cardImgs {
+  padding: 0 !important;
+  border: 0 !important;
+  margin-bottom: 5em;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.productImgsContainer::-webkit-scrollbar {
+  box-shadow: inset 0 0 6px #e8e9e9;
+}
+.productImgsContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 81, 105, 0.7);
+}
+.productPageJumbo {
+  margin-bottom: 0 !important;
+  background-color: transparent !important;
+}
+.productPageJumboTitle {
+  font-size: 1.5em;
+  font-style: bold;
+  color: #715169;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  padding: 0.2em;
+}
+.productPageJumbo a {
+  width: 100%;
+  margin-top: 5em !important;
+}
+.productImgsList {
+  margin-top: 2em;
+  margin-bottom: 1em !important;
+}
+.productsPage .util-btn {
+  background-color: #e8e9e9;
+  border-radius: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 0.8em !important;
+  color: #715169;
+  letter-spacing: 0.1em;
+}
+.productsPage .util-btn:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.productsPage .util-btn-del {
+  background-color: #715169 !important;
+  border-radius: 0 !important;
+  color: #e8e9e9 !important;
+}
+
+/* product form Pages ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.productFormPages #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.productFormPages .navMainButtonText {
+  color: #6a80b5 !important;
+}
+.productFormPages {
+  background-color: #e8e9e9;
+}
+.addProductForm,
+.updateProductForm {
+  margin-top: 2.5em;
+}
+.addProductForm .form-group,
+.updateProductForm .form-group {
+  margin-top: 5em;
+}
+.addProductForm .form-group input,
+.updateProductForm .form-group input {
+  font-family: 'Bungee';
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  margin-top: 0.5em;
+}
+.productFormsPageJumbo {
+  background-color: transparent !important;
+  padding: 0%;
+  width: 70%;
+  margin: auto !important;
+}
+.addProductSubmitButton {
+  background-color: #6a80b5 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+  width: 100%;
+  margin-top: 2em;
+}
+.addProductSubmitButton:focus {
+  outline: none !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.productFormsInputLabel {
+  font-family: 'Bungee';
+  color: #0e3b14;
+  margin-bottom: 1.1em;
+}
+
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+}
+.form-control {
+  font-size: 1em !important;
+  width: 100%;
+}
+.productFormPages::-webkit-scrollbar {
+  background-color: #e8e9e9;
+}
+.productFormPages::-webkit-scrollbar-thumb {
+  background-color: rgba(106, 128, 181, 0.7);
+}
+
+/* bills page */
+.billsPage {
+  background-color: #e8e9e9;
+}
+.billsPage::-webkit-scrollbar {
+  background-color: #e8e9e9;
+}
+.billsPage::-webkit-scrollbar-thumb {
+  background-color: rgba(119, 177, 173, 0.7);
+}
+.billsPage #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.billsPage .navMainButtonText {
+  color: #77b1ad !important;
+}
+.billPageJumbo {
+  margin-bottom: 0 !important;
+  background-color: transparent !important;
+}
+.billsPage .billSheetsContainer,
+.billsPage .billsSheetsList .cardList {
+  background-color: #e8e9e9 !important;
+}
+.billsPage .billsSheetsList {
+  margin-top: 1.4em;
+}
+.billsPage .cardList {
+  border: none !important;
+  font-size: 0.7em !important;
+  line-height: 2.5em;
+  padding: 0.2em;
+  margin: 0.6em;
+}
+.billsPage .cardList h8 {
+  color: #77b1ad !important;
+  float: left;
+}
+.card-desc-items {
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.billsPage .cardSheets {
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.billtPageJumboTitle {
+  font-size: 1.5em;
+  font-style: bold;
+  color: #77b1ad;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  padding: 0.2em;
+}
+.billPageJumbo a {
+  width: 100%;
+  margin-top: 5em !important;
+}
+.billAddButton {
+  background-color: #77b1ad !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+}
+.billAddButton:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.billImgsContainer {
+  font-family: 'Bungee';
+  overflow-y: scroll;
+  height: 45em;
+}
+.billImgsContainer::-webkit-scrollbar {
+  background-color: #e8e9e9;
+}
+.billImgsContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(119, 177, 173, 0.7);
+}
+.billFullpriceButton {
+  background-color: rgba(119, 177, 173, 0.7);
+  color: #e8e9e9;
+  font-size: 1em !important;
+  margin-top: 1.3em;
+}
+.billCardDateHeader {
+  font-size: 1.1em;
+  color: #77b1ad;
+}
+.billCardFooter {
+  font-size: 0.7em;
+}
+.billsSheetsList .list-group-item {
+  font-size: 0.7em;
+}
+.billsPage .util-btn {
+  border-radius: 0 !important;
+  background-color: #e8e9e9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 0.8em !important;
+  color: #77b1ad;
+  letter-spacing: 0.1em;
+}
+.billsPage .util-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.billsPage .util-btn-del {
+  background-color: #77b1ad;
+  color: #e8e9e9;
+}
+.billsSheetsList span {
+  background-color: rgba(119, 177, 173, 0.7) !important;
+  color: rgba(119, 177, 173, 0.7) !important;
+  margin-left: 0.3em;
+  width: 0.2em !important;
+}
+
+/* bills form pages */
+.billFormPages #mainNav {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.billFormPages .navMainButtonText {
+  color: #c7b782 !important;
+}
+.billFormPages {
+  background-color: #e8e9e9;
+}
+.billFormsPageJumbo {
+  background-color: transparent !important;
+  padding: 0%;
+  width: 100%;
+}
+.billContainer .form-group {
+  font-family: 'Bungee';
+  margin-left: 0.7em;
+  margin-top: 1.7em;
+}
+.billContainer .form-group input,
+.billContainer .form-group select {
+  margin-top: 1.1em;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+}
+.billContainer .form-group select option {
+  background-color: #e8e9e9 !important;
+  color: #c7b782;
+}
+.billContainer .form-group input:focus,
+.billContainer .form-group select:focus {
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  outline: 0 !important;
+}
+.billProductsSubmitButtons {
+  background-color: #c7b782 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #e8e9e9 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+  width: 100%;
+  margin-top: 2em;
+}
+.billProductsSubmitButtons:focus {
+  outline: none !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+}
+.addBillProductsButton {
+  background-color: #e8e9e9 !important;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  color: #c7b782 !important;
+  border: 0 !important;
+  letter-spacing: 0.4em;
+  margin-top: 3.5em;
+}
+.addBillProductsButton:focus {
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc !important;
+  outline: none !important;
+}
+.billFormPages .addBillForm,
+.billFormPages .updateBillForm {
+  margin-top: 2.5em;
+}
+.billFormsForm {
+  justify-content: center;
+}
+.billFormsForm .name {
+  padding-top: 0 !important ;
+}
+.billFormPages .util-btn-del {
+  background-color: #c7b782 !important;
+  border-radius: 0 !important;
+  color: #e8e9e9 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  margin-top: 3.6em;
+  margin-left: 0.4em;
+}
+
+.billFormPages::-webkit-scrollbar {
+  background-color: #e8e9e9;
+}
+.billFormPages::-webkit-scrollbar-thumb {
+  background-color: rgba(199, 183, 130, 0.7);
+}
+/* To handle alerts*/
+.alert {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif !important;
+  font-size: 1.05em;
+  letter-spacing: 0.25em;
+  text-align: center;
+  width: 99.8%;
+  padding: 1.6em 15em;
+}
+
+.alert--success {
+  animation: alert-anim-success 5s linear 2;
+  -moz-animation: alert-anim-success 5s linear 2;
+  -webkit-animation: alert-anim-success 5s linear 2;
+  -o-animation: alert-anim-success 5s linear 2;
+}
+.alert--error {
+  animation: alert-anim-error 5s linear 2;
+  -moz-animation: alert-anim-error 5s linear 2;
+  -webkit-animation: alert-anim-error 5s linear 2;
+  -o-animation: alert-anim-error 5s linear 2;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 768px) {
+  .alert {
+    font-size: 0.8em;
+  }
+  .navMainButtonText {
+    font-size: 1.2em !important;
+  }
+  .navButtonText {
+    font-size: 0.9em !important;
+  }
+  .indexPage .indexTitle {
+    margin-top: 3em;
+    font-size: 3em;
+    text-shadow: 0.05em 0.05em 0.2em rgb(201, 142, 142);
+  }
+  .indexPage .bproducts,
+  .indexPage .bbills {
+    width: 100%;
+    letter-spacing: 0.18em;
+    font-size: 1em !important;
+    border: 0 !important;
+  }
+  .productPageJumbo a {
+    margin-top: 3em !important;
+  }
+  .addProductSubmitButton {
+    width: 100%;
+  }
+  .addProductForm .form-group,
+  .updateProductForm .form-group {
+    margin-top: 1em;
+  }
+  .billFormPages .util-btn-del {
+    margin-top: 1.2em;
+    margin-left: 0.7em;
+  }
+}

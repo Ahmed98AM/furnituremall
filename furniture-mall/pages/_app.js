@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Hydrate } from "react-query/hydration";
 import { useRouter } from "next/router";
+import "../styles/globals.css";
 
 const Noop = ({ children }) => <>{children}</>;
 

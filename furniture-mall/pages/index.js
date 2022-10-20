@@ -1,16 +1,17 @@
 
 import styles from '../styles/Home.module.css'
 import Layout from "../components/layout/layout";
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <div>
       <section className={`${styles.jumbotron} text-center indexPageHeader`}>
-        <div className="container">
-          <h1 className="indexTitle flux">The Furniture Store</h1>
-          <p className="indexPageButtons">
-            <a href="/products" className="btn btn-primary btn-style-one bproducts">Products</a>
-            <a href="/bills" className="btn btn-secondary btn-style-one bbills">Bills</a>
+        <div className="mt-[12em]">
+          <h1 className="flux text-6xl ">The Furniture Store</h1>
+          <p className='mt-[2em]'>
+            <Link href= "/products"><a className='m-[2em]'>Products</a></Link>
+            <Link href= "/bills"><a className='m-[2em]'>Bills</a></Link>
           </p>
         </div>
       </section>
